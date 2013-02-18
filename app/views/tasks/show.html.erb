@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @task.title %>
+</p>
+
+<p>
+  <b>Caption:</b>
+  <%= @task.caption %>
+</p>
+
+<p>
+  <b>Task price:</b>
+  <%= @task.task_price %>
+</p>
+
+<p>
+  <b>Poster:</b>
+  <%= @task.poster_id %>
+</p>
+
+<p>
+  <b>Runner:</b>
+  <%= @task.runner_id %>
+</p>
+
+<p>
+  <b>Message:</b>
+  <%= @task.message_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_task_path(@task) %> |
+<%= link_to 'Back', tasks_path %>

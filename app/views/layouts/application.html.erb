@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Done</title>
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+
+  <link href="../assets/css/bootstrap.css" rel="stylesheet">
+    <link href="../assets/css/bootstrap.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+        padding-top: 20px;
+        padding-bottom: 40px;
+      }
+
+      /* Custom container */
+      .container-narrow {
+        margin: 0 auto;
+        max-width: 800px;
+      }
+      .container-narrow > hr {
+        margin: 30px 0;
+      }
+
+      /* Main marketing message and sign up button */
+      .jumbotron {
+        margin: 60px 0;
+        text-align: center;
+      }
+      .jumbotron h1 {
+        font-size: 72px;
+        line-height: 1;
+      }
+      .jumbotron .btn {
+        font-size: 21px;
+        padding: 14px 24px;
+      }
+
+      /* Supporting marketing content */
+      .marketing {
+        margin: 60px 0;
+      }
+      .marketing p + h4 {
+        margin-top: 28px;
+      }
+    </style>
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</head> 
+	<div class="container-narrow">
+
+      <div class="masthead">
+        <ul class="nav nav-pills pull-right">
+          <li class="active"><a href="http://localhost:3000">Home</a></li>
+          <li><%= link_to "Tasks", tasks_url %></li>
+          <li><%= link_to "Posters", posters_url %></li>
+          <li><%= link_to "Runners", runners_url %></li>
+      	<li><%= link_to "Log in", new_session_url %></li>
+        </ul>
+        <h3 class="muted"><%= image_tag("done-logo3.png")%></h3>
+      </div>
+
+      <hr>
+
+<body>
+	<div class="container-narrow">
+    <%= yield %>
+  </div>
+
+</body>
+
+<hr>
+<br>
+
+</html>

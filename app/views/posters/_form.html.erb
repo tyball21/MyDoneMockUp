@@ -1,0 +1,57 @@
+<%= form_for(@poster) do |f| %>
+  <% if @poster.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@poster.errors.count, "error") %> prohibited this poster from being saved:</h2>
+
+      <ul>
+      <% @poster.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :address %><br />
+    <%= f.text_field :address %>
+  </div>
+  <div class="field">
+    <%= f.label :state %><br />
+    <%= f.text_field :state %>
+  </div>
+  <div class="field">
+    <%= f.label :city %><br />
+    <%= f.text_field :city %>
+  </div>
+  <div class="field">
+    <%= f.label :zip %><br />
+    <%= f.number_field :zip %>
+  </div>
+  <div class="field">
+    <%= f.label :about %><br />
+    <%= f.text_area :about %>
+  </div>
+  <div class="field">
+    <%= f.label :phone %><br />
+    <%= f.number_field :phone %>
+  </div>
+  <div class="field">
+    <%= f.label :task_id %><br />
+    <%= f.number_field :task_id %>
+  </div>
+  <div class="field">
+    <%= f.label :runner_id %><br />
+    <%= f.number_field :runner_id %>
+  </div>
+  <div class="field">
+    <%= f.label :message_id %><br />
+    <%= f.number_field :message_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

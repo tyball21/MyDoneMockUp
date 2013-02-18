@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @poster.name %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%= @poster.address %>
+</p>
+
+<p>
+  <b>State:</b>
+  <%= @poster.state %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%= @poster.city %>
+</p>
+
+<p>
+  <b>Zip:</b>
+  <%= @poster.zip %>
+</p>
+
+<p>
+  <b>About:</b>
+  <%= @poster.about %>
+</p>
+
+<p>
+  <b>Phone:</b>
+  <%= @poster.phone %>
+</p>
+
+<p>
+  <b>Task:</b>
+  <%= @poster.task_id %>
+</p>
+
+<p>
+  <b>Runner:</b>
+  <%= @poster.runner_id %>
+</p>
+
+<p>
+  <b>Message:</b>
+  <%= @poster.message_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_poster_path(@poster) %> |
+<%= link_to 'Back', posters_path %>

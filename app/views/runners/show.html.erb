@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Poster:</b>
+  <%= @runner.poster_id %>
+</p>
+
+<p>
+  <b>Message:</b>
+  <%= @runner.message_id %>
+</p>
+
+<p>
+  <b>Task:</b>
+  <%= @runner.task_id %>
+</p>
+
+<p>
+  <b>Skills:</b>
+  <%= @runner.skills %>
+</p>
+
+<p>
+  <b>Background:</b>
+  <%= @runner.background %>
+</p>
+
+
+<%= link_to 'Edit', edit_runner_path(@runner) %> |
+<%= link_to 'Back', runners_path %>

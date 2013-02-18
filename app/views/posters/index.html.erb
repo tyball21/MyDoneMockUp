@@ -1,0 +1,41 @@
+<h1>Listing posters</h1>
+
+<table class="table table-striped">
+  <tr>
+    <th>Name</th>
+    <th>Address</th>
+    <th>State</th>
+    <th>City</th>
+    <th>Zip</th>
+    <th>About</th>
+    <th>Phone</th>
+    <th>Task</th>
+    <th>Runner</th>
+    <th>Message</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @posters.each do |poster| %>
+  <tr>
+    <td><%= poster.name %></td>
+    <td><%= poster.address %></td>
+    <td><%= poster.state %></td>
+    <td><%= poster.city %></td>
+    <td><%= poster.zip %></td>
+    <td><%= poster.about %></td>
+    <td><%= poster.phone %></td>
+    <td><%= poster.task_id %></td>
+    <td><%= poster.runner_id %></td>
+    <td><%= poster.message_id %></td>
+    <td><%= link_to 'Show', poster %></td>
+    <td><%= link_to 'Edit', edit_poster_path(poster) %></td>
+    <td><%= link_to 'Destroy', poster, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Poster', new_poster_path %>
