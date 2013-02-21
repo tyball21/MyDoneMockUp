@@ -11,17 +11,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130218001221) do
+ActiveRecord::Schema.define(:version => 20130219214210) do
 
   create_table "messages", :force => true do |t|
     t.string   "title"
     t.text     "body"
     t.boolean  "urgent"
     t.integer  "poster_id"
-    t.integer  "task_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "runner_id"
+    t.integer  "task_id"
   end
+
+  add_index "messages", ["poster_id"], :name => "index_messages_on_poster_id"
+  add_index "messages", ["runner_id"], :name => "index_messages_on_runner_id"
+  add_index "messages", ["task_id"], :name => "index_messages_on_task_id"
 
   create_table "posters", :force => true do |t|
     t.string   "name"
@@ -31,17 +36,11 @@ ActiveRecord::Schema.define(:version => 20130218001221) do
     t.integer  "zip"
     t.text     "about"
     t.integer  "phone"
-    t.integer  "task_id"
-    t.integer  "runner_id"
-    t.integer  "message_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
   create_table "runners", :force => true do |t|
-    t.integer  "poster_id"
-    t.integer  "message_id"
-    t.integer  "task_id"
     t.text     "skills"
     t.boolean  "background"
     t.datetime "created_at", :null => false
@@ -61,7 +60,6 @@ ActiveRecord::Schema.define(:version => 20130218001221) do
     t.integer  "task_price"
     t.integer  "poster_id"
     t.integer  "runner_id"
-    t.integer  "message_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

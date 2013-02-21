@@ -26,9 +26,9 @@
     <td><%= poster.zip %></td>
     <td><%= poster.about %></td>
     <td><%= poster.phone %></td>
-    <td><%= poster.task_id %></td>
-    <td><%= poster.runner_id %></td>
-    <td><%= poster.message_id %></td>
+    <td><%#= poster.task_id %></td>
+    <td><%#= poster.runner_id %></td>
+    <td><%#= poster.message_id %></td>
     <td><%= link_to 'Show', poster %></td>
     <td><%= link_to 'Edit', edit_poster_path(poster) %></td>
     <td><%= link_to 'Destroy', poster, method: :delete, data: { confirm: 'Are you sure?' } %></td>
