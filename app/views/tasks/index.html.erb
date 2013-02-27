@@ -1,27 +1,36 @@
+<% if session[:name].present? %>
+
 <h1>Listing tasks</h1>
+  
+  
+    <table class="table table-striped">
+    <tr>
+      <th>Title</th>
+      <th>Caption</th>
+      <th>Task price</th>
+      <th>Poster</th>
+      <th>Runner</th>
+      <th>Message</th>
+    </tr>
 
-<table class="table table-striped">
-  <tr>
-    <th>Title</th>
-    <th>Caption</th>
-    <th>Task price</th>
-    <th>Poster</th>
-    <th>Runner</th>
-    <th>Message</th>
-  </tr>
+    <% @tasks.each do |task| %>
+    <tr>
+      <td><%= task.title %></td>
+      <td><%= task.caption %></td>
+      <td><%= task.task_price %></td>
+      <td><%= link_to 'Show', task %></td>
+      <td><%= link_to 'Edit', edit_task_path(task) %> </td>
+      <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %>   </td>
+      </tr>
+        <% end %>
+      </table>
 
-<% @tasks.each do |task| %>
-  <tr>
-    <td><%= task.title %></td>
-    <td><%= task.caption %></td>
-    <td><%= task.task_price %></td>
-    <td><%= link_to 'Show', task %></td>
-    <td><%= link_to 'Edit', edit_task_path(task) %></td>
-    <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
+      <br />
 
-<br />
+    <%= link_to 'New Task', new_task_path, :class => "btn" %>
 
-<%= link_to 'New Task', new_task_path, :class => "btn" %>
+  
+
+  <% else  %>
+    <p> Please create a <%= link_to "new account", '/welcome'  %> to view this page. :-)</p> 
+    <% end %>

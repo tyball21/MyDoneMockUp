@@ -1,5 +1,5 @@
 Done::Application.routes.draw do
-  root :to => 'welcome#index'
+  get '/welcome' => 'welcome#index', as: 'root'
 
   resources :messages
 
@@ -12,9 +12,9 @@ Done::Application.routes.draw do
 
   resources :tasks
 
+  post '/signin', :controller => "Session", :action => "create"
   get "/session", :controller => "Session", :action => "new", :as => "new_session"
-  post '/session', :controller => "Session", :action => "create"
-  delete '/session', :controller => "Session", :action => "destroy"
+  get '/signout', :controller => "Session", :action => "goodbye", :as => "delete_session"
 
 
 

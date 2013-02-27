@@ -40,10 +40,11 @@
 
 </body>
 </html><body>
+ 
 
     <div class="container">
 
-      <form class="form-signin">
+     <!--  <form class="form-signin">
         <h2 class="form-signin-heading">Please sign in</h2>
         <input type="text" class="input-block-level" placeholder="Email address">
         <input type="password" class="input-block-level" placeholder="Password">
@@ -51,15 +52,16 @@
           <input type="checkbox" value="remember-me"> Remember me
         </label>
         <button class="btn btn-large btn-primary" type="submit">Sign in</button>
-      </form>
+      </form> -->
 
-      <%= form_tag '/session', :class => "form-signin" do %>
-      	<%= label_tag :name %>
-      	<%= text_field_tag :name %>
+      <%= form_tag '/signin', :class => "form-signin" do %>
+      <h2 class="form-signin-heading">Please sign in</h2>
+      	<%= text_field_tag :name, placeholder="Username"%>
       	<%= submit_tag %>
+
+        <br>
+        <br>
+        <%= link_to "sign up", "/posters/new"%>
       	<% end %>
-
-
-
 
     </div>
